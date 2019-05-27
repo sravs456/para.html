@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+		    body{background-color: red;}
+			form li{list-style: none; margin-bottom: 5px;}
+			form ul li label{float: left;clear: left;width: 100px;text-align: left;margin-right: 10px;font-size: 14px;}
+			form ul li input{float: left;margin-bottom: 10px;}
+			[type="submit"]{clear: left; margin: 12px 0 0 0px;
+				font-size: 18px;}
+
+	</style>
+</head>
+<body >
+	<h1 style="color: black; margin-left: 2em">Registration Form</h1>
+<form name="registration" action="submit.html" onsubmit="return validate()" method="post">
+	<ul>
+<li><label > Student Name:</label></li>
+<li><input type="text" name="sname" placeholder="Enter Your Name" minlength="1"onkeypress="return /[a-z .]/i.test(event.key)" required></br></li>
+<li><label >Father's Name:</label></li>
+<li><input type="text" name="fname" minlength="1" placeholder="Enter Your Father's Name"  onkeypress="return /[a-z .]/i.test(event.key)" required></br></li>
+<li><label >Mother's Name:</label></li>
+<li><input type="text" name="mname" minlength="1" placeholder="Enter Your Mother's Name"  onkeypress="return /[a-z .]/i.test(event.key)" required></br></li>
+<li><label  >Phone:</label></li>
+<li><input type="text" name="pnum" minlength="10" maxlength="10" placeholder="Enter Your 10 digit mobile Number"  onkeypress="return /[0-9]/i.test(event.key)" required></br></li>
+<li><label >Adhar:</label></li> 
+<li><input type="numeric" name="adhar" minlength="12" maxlength="12" placeholder="Enter Your Adhar Number" onkeypress="return /[0-9]/i.test(event.key)" required></br></li>
+<li><label >Address:</label></li>
+<li><input type="text" name="add" placeholder="Enter Your Address" onkeypress="return /[a-z ,]/i.test(event.key)" required></br></li>
+<li><label >E-mail:</label></li>
+<li><input type="text" name="email" placeholder="Enter Your valid email" required></br></li>
+</ul>
+<input type="submit" value="Submit" style="color:white;background-color: green;float: left;margin-left:11em">
+</form>
+</body>
+</html>
+<script>
+	function validate(){
+	var i=0;
+	var x6=document.registration.email;
+	if (email(x6)) {return true;
+		}
+		else {return false;}
+	}
+function email(mail)
+{
+	var mailfmt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if (mail.value.match(mailfmt)) {return true;}
+	else{
+		alert("You have entered an invalid mail");
+		mail.focus();
+		return false;
+	}
+}
+</script>
+</html>
